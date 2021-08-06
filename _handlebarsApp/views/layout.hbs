@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>{{title}}</title>
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+      <link rel="stylesheet" href="/eventsStyle/style.css" />
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+   </head>
+
+   <body>
+      {{#if _id}}
+         <nav>
+            <!-- Use any element to open the sidenav -->
+<span onclick="openNav()"><a href="javascript:void(0);"  id = "clickBurger"><img src="/images/hamburger.png" id = "navImg1" alt = "hamburger photo"></a></span>
+
+
+      <div id="mySidenav" class="sidenav">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         <a href="/home">Home</a>         
+         <a href="/home/account">Account</a>
+         <a href="/event/category/music">Concerts</a>
+         <a href="/event/category/sports">Sports</a>
+         <a href="/event/category/theatre">Theatre</a>
+         <a href="/event/category/family">Family</a>
+         <a href="/event/category/festivals">Festivals</a>
+
+         <a href="/auth/logout">Log Out</a>
+      </div>
+            <img id = "navImg2" src="/images/logoRectangleClose.png" alt = "logo">
+            <div class = "layoutImageCropper">
+               <img id = "navImg3" src={{imageUrl}} alt = "User Image">
+            </div>
+         </nav>
+      {{/if}}
+      {{#if this.user._id}}
+         <nav>
+            <!-- Use any element to open the sidenav -->
+<span onclick="openNav()"><a href="javascript:void(0);"  id = "clickBurger"><img src="/images/hamburger.png" id = "navImg1" alt = "hamburger photo"></a></span>
+
+
+      <div id="mySidenav" class="sidenav">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         <a href="/home">Home</a>
+         <a href="/home/account">Account</a>
+         <a href="/event/category/music">Concerts</a>
+         <a href="/event/category/sports">Sports</a>
+         <a href="/event/category/theatre">Theatre</a>
+         <a href="/event/category/family">Family</a>
+         <a href="/event/category/festivals">Festivals</a>
+         
+         <a href="/auth/logout">Log Out</a>
+      </div>
+            <img id = "navImg2" src="/images/logoRectangleClose.png" alt = "logo">
+            <div class = "layoutImageCropper">
+               <img id = "navImg3" src={{this.user.imageUrl}} alt = "User Image">
+            </div>
+         </nav>
+
+
+      {{/if}}
+
+
+
+
+      {{{body}}}
+
+
+
+   
+      <script src="/js/script.js"></script>
+
+   </body>
+
+</html>

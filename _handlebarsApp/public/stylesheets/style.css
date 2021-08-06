@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  z-index: 0;
+  width: 100%;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+/* LAYOUT AND NAV BAR */
+
+nav {
+  background-color: #3AC28A;
+  position: relative;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navImg1 {
+  padding: 9px 7px 7px 15px;
+  height: 35px;
+}
+
+#navImg2 {
+  padding: 7px;
+  height: 45px;
+}
+
+.layoutImageCropper {
+  width: 35px;
+  height: 35px;
+  margin: 7px 15px 7px 7px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+#navImg3 {
+  display: inline;
+  margin: auto;
+  height: 100%;
+  width: auto; 
+}
+
+
+#hiddenNav {
+  display: none;
+  background-color: rgb(204, 200, 200);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}
+
+#hiddenNav li{
+  list-style-type: none;
+  height: 50px;
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid grey;
+  color: white;
+}
+
+#hiddenNav a {
+  text-decoration: none;
+}
+
+#hiddenNav li:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#hiddenNav li a:hover {
+  color: black;
+}
+
+
+/* INDEX PAGE */
+
+#indexMamaDiv {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width:100%;
+  min-width: 720px;
+}
+
+#indexLeft {
+  width: 60%;
+  text-align: center;
+}
+
+.slideshow-container, #indexLeft h1 {
+  width: 80%;
+  min-width: 400px;
+  position: relative;
+  margin: auto 10px auto auto;
+}
+
+#indexLeft h1{
+  font-family: 'Abril Fatface', cursive;
+  font-size: 30px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+#indexRight {
+  width: 40%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#roundLogo {
+  width: 225px;
+  text-align: center;
+  margin: 10px 20px auto 10px;
+}
+
+.indexInput {
+  width: 250px;
+  height: 30px;
+  font-weight: 800;
+}
+
+#indexSignUp {
+  background-color: darkgray;
+}
+
+
+/*  SIGNUP PAGE  */
+
+#signupMamaDiv {
+  display: flex;
+  width: 100%;
+  min-width: 900px;
+  height: 880px;
+}
+
+#signupSection1 {
+  width: 384px;
+  background-image: url(/images/signupBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#signupSection2 {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupInput {
+  width: 250px;
+  height: 30px;
+}
+
+#signupRoundLogo {
+  width: 225px;
+  position: relative;
+  left: 300px;
+  top: 30px;
+  z-index:-1;
+}
+
+#signupH1 {
+  font-size: 35px;
+  position:relative;
+  right: 130px;
+  bottom: 170px;
+  text-align: center;
+}
+
+#signupForm {
+  position: relative;
+  bottom: 170px;
+  right: 120px;
+}
+
+
+/*  ACCOUNT PAGE  */
+
+#accountPageSection1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#accountSection1Div1 {
+  width: 50%;
+}
+
+.imageCropper {
+  width: 225px;
+  height: 225px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#accountPagePhoto {
+  display: inline;
+  margin: auto;
+  height: 100%;
+  width: auto; 
+}
+
+#accountSection1Div2 {
+  width: 50%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 30px;
+}
+
+#accountSection1Div2 h1 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#accountSection2Div1, #accountSection2Div2{
+  margin-top: 50px;
+  height: 300px;
+  font-size: 25px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#accountCreatedEvents {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.createdEventsIndividualSection {
+  display: inline-block;
+  width: 350px;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.createdEventsIndividualSection:hover {
+  background-color: #777;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.eachImage {
+  height: 200px;
+}
+
+.lastDiv {
+  color: black;
+} 
+
+.dateTime {
+  font-size: 15px;
+  margin-top: 15px;
+  white-space: normal;
+}
+
+
+/*  EDIT ACCOUNT INFO PAGE  */
+
+#editMamaDiv {
+  display: flex;
+  width: 100%;
+  min-width: 1067px;
+  height: 880px;
+}
+
+#editSection1 {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#editSection2 {
+  width: 384px;
+  background-image: url(/images/grandCanyon.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#formDiv {
+  position: relative;
+  top: 82px;
+  left: 250px;
+}
+
+.editInput {
+  width: 250px;
+  height: 30px;
+}
+
+#editRoundLogo {
+  width: 225px;
+  position: absolute;
+  left: 40px;
+  top: 80px;
+  z-index:-1;
+}
+
+#editH1 {
+  font-size: 35px;
+  position:relative;
+  right: 130px;
+  bottom: 170px;
+  text-align: center;
+}
+
+#editForm {
+  position: relative;
+  bottom: 170px;
+  right: 120px;
+}
+
+
+
+/* HOME PAGE  */
+
+#homeMamaDiv {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+#homeSection1 {
+  margin-top: 50px;
+  width: 100%;
+}
+
+#homeSection1 form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.formElement {
+  height: 40px;
+  width: 23%;
+  min-width: 100px;
+}
+
+.searchFormButton {
+  height: 40px;
+  width: 100px;
+}
+
+#homeSection11 {
+  width: 100%;
+  height: 40px;
+  font-size: 30px;
+  font-weight: 600px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+}
+
+.section11Divs {
+  width: 50%;
+  text-align: center;
+}
+
+#homeSection2 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  width: 100%;
+}
+
+#homeSection2Div1 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#homeSection2Div1 h1 {
+  position: absolute;
+  top: 190px;
+  font-size: 25px;
+  font-weight: 600px;
+}
+
+#homeSection2Div1 .createdEventsIndividualSection {
+  border: 2px solid rgb(88, 88, 88);
+  border-radius: 10%;
+}
+
+#homeSection2Div2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#homeSection2Div2 button {
+  width: 100px;
+  height: 100px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 30px;
+  border-radius: 20%;
+}
+
+#homeSection22 {
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+  font-weight: 600px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+#homeSection3 {
+  margin-top: 0px;
+  width: 100%;
+}
+
+
+
+/* MORGANE'S CODE HEYYY */
+
+
+.product-search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  margin: 0 auto;
+  box-shadow: rgba(0,0,0,.172549) 0 6px 12px 0;
+  cursor: pointer;
+  width: 70%;
+}
+
+.search-element {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  border-right: 1px solid rgba(10,10,10,.1);
+  padding: 1em;
+}
+
+.keywords-search {
+  width: 30%;
+}
+
+.search-label {
+  font-weight: bolder;
+}
+
+.search-input {
+  border: none;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin-top: 5px;
+}
+
+.search-input:focus {
+  box-shadow: 0px 2px 0px 0px tomato;
+}
+
+.search-button {
+  display: inline-block;
+  flex-grow: 1;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 2em;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 100;
+  border: 0;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  background-color: #247956;
+  transition: background-color 0.8s ease;
+}
+
+.search-button:hover {
+  background-color: HSLA(345, 100%, 60%, 1.00);
+}
+
+
+.morgane { padding: 1rem; }
+
+
+.cards {
+
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card-link{
+  color: black;
+}
+
+.card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.7);
+  border-radius: 2%;
+  position: relative;
+}
+
+
+.result-card-header {
+  align-self: left;
+}
+
+
+.card img {
+  padding-top: 5px;
+  width: 100%
+}
+
+.result-card-content {
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.result-card-footer {
+  height: 60px;
+  width:100%;
+  position:absolute;
+  left: 0;
+  bottom: 0;
+
+}
+
+
+.result-card-button {
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+}
+
+
+.result-card-footer div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.result-card-footer button {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: none;
+  display: flex;
+  box-shadow: 0px 0px 10px -4px rgba(58, 194, 138,.7);
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+/* EVENT DETAILS PAGE */
+
+#eventMamaDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid red 1px;
+}
+
+#eventTitle {
+  font-size: 50px;
+  font-weight: 800px;
+  margin: 30px auto 30px auto;
+  text-align: center;
+}
+
+#eventImage {
+  margin: 0 0 30px 0;
+  width: 644px;
+}
+
+#eventButton {
+  margin:0 0 30px 0;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+}
+
+#eventButton a{
+  color: black;
+}
+
+#eventVenue, #eventCity{
+  margin: 0 0 30px 0;
+  font-size: 30px;
+}
+
+#eventDateTime {
+  display: flex;
+  width: 644px;
+  margin: 0 0 30px 0;
+  justify-content: space-evenly;
+}
+
+#eventLinks {
+  display: flex;
+  width: 644px;
+  margin: 0 0 30px 0;
+  justify-content: space-evenly;
+}
+
+.searchHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#noSearchHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600p;
+  margin-top: 70px;
+}
+
+#noSearchHeader img {
+  margin-top: 75px;
+  width: 500px;
+  align-self: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: rgba(58, 194, 138, 0.3); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: grey;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

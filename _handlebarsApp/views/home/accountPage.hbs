@@ -1,0 +1,63 @@
+<div id = "accountPageMamaDiv">
+    <section id = "accountPageSection1">
+        <div id = "accountSection1Div1">
+            <div class = "imageCropper">
+                <img src={{imageUrl}} alt="user photo" id="accountPagePhoto">
+            </div>
+        </div>
+        <div id = "accountSection1Div2">
+            <h1>{{toUpperCase username}}</h1>
+            <p>City: {{city}}</p>
+            <p>Email: {{email}}</p>
+            <p>Age: {{age}}</p>
+            <a href="/home/account/edit">Update your account details</a>
+        </div>
+    </section>
+
+    <section id = "accountPageSection2">
+        <div id = "accountSection2Div2">
+            <h1>CREATED EVENTS</h1><br>
+            <div id = "accountCreatedEvents">
+                {{#each createdEvents}}
+                    <a href="/event/{{_id}}">
+                        <section class = "createdEventsIndividualSection"> 
+                            <div>
+                                <p class = "title">{{name}}</p>
+                            </div>
+                            <div>
+                                <img class = "eachImage" src={{img}} alt="Placeholder image">
+                            </div>
+                            <div class = "lastDiv">
+                                <h5 class="dateTime"><time datetime="2016-1-1">{{this.dateAndTime.date}} {{#if this.dateAndTime.time}} - {{this.dateAndTime.time}} {{/if}}</time></h5>
+                            </div>
+                        </section>
+                    </a>
+                {{/each}}
+            </div>
+        </div>
+
+        <br><br><br><br>
+
+        <div id = "accountSection2Div2">
+            <h1>SAVED EVENTS</h1><br>
+            <div id = "accountCreatedEvents">
+                {{#each savedEvents}}
+                    <a href="/event/{{_id}}">
+                        <section class = "createdEventsIndividualSection"> 
+                            <div>
+                                <p class = "title">{{name}}</p>
+                            </div>
+                            <div>
+                                <img class = "eachImage" src={{img}} alt="Placeholder image">
+                            </div>
+                            <div class = "lastDiv">
+                                <h5 class="dateTime"><time datetime="2016-1-1">{{this.dateAndTime.date}} {{#if this.dateAndTime.time}} - {{this.dateAndTime.time}} {{/if}}</time></h5>
+                            </div>
+                        </section>  
+                    </a>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+</div>

@@ -1,0 +1,76 @@
+<div id = "homeMamaDiv">
+<section id = "homeSection1">
+    <form action="/search" method="get">
+        <div class="product-search">
+            <div class="search-element keywords-search">
+                <label class="search-label">Keywords:</label>
+                <input class="search-input" type="text" autocomplete="on" placeholder="e.g. Dua Lipa concert Razzmatazz" name="keyword" required>
+            </div>
+            <div class="search-element">
+                <label class="search-label">City: </label>
+                <input class="search-input" type="text" placeholder="e.g. Barcelona" autocapitalize="on" name="city" required>
+            </div>
+            <div class="search-element">
+                <label class="search-label">Date: </label>
+                <input class="search-input" type="date" name="date" required>
+            </div>
+            <button type="submit" class="button search-button has-text-weight-bold is-active has-text-white">Search</button>
+        </div>
+    </form>
+</section>
+
+    <section id = "homeSection11">
+        <div class ="section11Divs"> <h1>Your next event!</h1></div>
+        <div class ="section11Divs"></div>
+    </section>
+
+    <section id = "homeSection2">
+
+        <div id = "homeSection2Div1">
+            <a href="/event/{{user.createdEvents.[0]._id}}">
+                <section class = "createdEventsIndividualSection"> 
+                    <div>
+                        <p class = "title">{{user.createdEvents.[0].name}}</p>
+                    </div>
+                    <div>
+                        <img class = "eachImage" src={{user.createdEvents.[0].img}} alt="Placeholder image">
+                    </div>
+                        <div class = "lastDiv">
+                        <h5 class="dateTime"><time datetime="2016-1-1">{{user.createdEvents.[0].dateAndTime.date}} {{#if user.createdEvents.[0].dateAndTime.time}} - {{user.createdEvents.[0].dateAndTime.time}} {{/if}}</time></h5>
+                    </div>
+                </section>  
+            </a>
+        </div>
+
+        <div id = "homeSection2Div2">
+            <h1>Create a new event</h1>
+            <div>
+            <a href="/event/create"><button>+</button></a>
+            </div>
+        </div>
+
+    </section>
+
+    <section id = "homeSection22"><h1>Events near you!</h1></section>
+
+    <section id = "homeSection3">
+        <div id = "accountCreatedEvents">
+            {{#each events}}
+                <a href="/event/{{_id}}">
+                    <section class = "createdEventsIndividualSection"> 
+                        <div>
+                            <p class = "title">{{this.name}}</p>
+                        </div>
+                        <div>
+                            <img class = "eachImage" src={{this.img}} alt="Placeholder image">
+                        </div>
+                            <div class = "lastDiv">
+                            <h5 class="dateTime"><time datetime="2016-1-1">{{this.dateAndTime.date}} {{#if this.dateAndTime.time}} - {{this.dateAndTime.time}} {{/if}}</time></h5>
+                        </div>
+                    </section>  
+                </a>
+            {{/each}}
+        </div>
+    </section>
+
+</div>

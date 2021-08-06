@@ -1,0 +1,57 @@
+
+<div id = "editMamaDiv">
+
+   <section id = "editSection1">
+
+      <div>
+
+         <img id = "editRoundLogo" src="/images/logoRound.png" alt="website logo">
+
+         <div id = "formDiv">
+
+            <h1 id = "editH1">Edit your account info! </h1><br><br>
+
+            <form id = "editForm" action="/home/account/edit" method="POST" enctype="multipart/form-data">
+
+               <label class = "editLabel"> Username</label><br>
+               <input class = "editInput" type="text" name="username" placeholder={{username}}>
+
+            <br><br>
+
+               <label class = "editLabel"> Password </label><br>
+               <input class = "editInput" type="password" name="password" placeholder="********">
+
+            <br><br>
+               
+               <label class = "editLabel"> Email </label><br>
+               <input class = "editInput" type="email" name="email">
+
+            <br><br>
+               
+               <label class = "editLabel"> City </label><br>
+               <input class = "editInput" type="text" name="city">
+
+            <br><br>
+
+               <label class = "editLabel"> Age </label><br>
+               <input class = "editInput" type="number" name="age">
+
+            <br><br>
+
+               <label class = "editLabel">Profile Picture</label><br>
+               <input  class = "editInput" type="file" name="imageUrl"/>
+
+            <br><br>
+
+               <button type="submit">Submit</button>
+
+            </form>
+         </div>
+
+      </div>
+
+   </section>
+
+   <section id = "editSection2"></section>
+
+</div>

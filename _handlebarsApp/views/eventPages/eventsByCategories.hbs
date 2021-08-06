@@ -1,0 +1,55 @@
+<div class = "morgane page-main-div">
+
+<div>
+<h2 class = "searchHeader">Category : {{categoryName}}</h2>
+</div>
+
+<br>
+<br>
+
+<div class="cards">
+
+{{#each results}}
+
+<div class="card">
+    <a class= "card-link" href="/event/{{this._id}}">
+    <div class="result-card-header">
+          <h4 class="title is-4">{{this.name}}</h4>
+    </div> 
+    <div class="card-image">
+          <img src={{this.img}} alt="Placeholder image">
+    </div>
+    <div class="result-card-content">
+            <h6 class="title is-6 card-title"> {{this.location.city}} -- 
+                <time>{{this.dateAndTime.date}} {{#if this.dateAndTime.time}} - {{this.dateAndTime.time}} {{/if}}</time>
+            </h6>
+    </div>
+    <div class="result-card-footer">
+        <div>
+        <button><a class= "result-card-button has-text-centered" nohref id="save-event" onclick="saveAnEvent('{{this._id}}')()" class="card-footer-item">Save</a></button>
+
+        {{#if this.urlForTickets}}
+        <button><a class= "result-card-button" href={{this.urlForTickets}} target="_blank" class="card-footer-item">Buy Tickets</a></button>
+        {{/if}}
+
+        {{#if this.artistSiteUrl}}
+        <button><a class= "result-card-button" href={{this.artistSiteUrl}} target="_blank" class="card-footer-item">Artist's Page</a></button>
+        {{/if}}
+
+        {{#if (isOwner this.owner ../user)}}
+        <button><a class= "result-card-button" href="#" class="card-footer-item">Edit</a></button>
+        <button><a class= "result-card-button" href="#" class="card-footer-item">Delete</a></button>
+        {{/if}}
+        </div>
+    </div>
+    </a>
+</div>
+
+
+{{/each}}
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/functionsForHbs.js"></script>

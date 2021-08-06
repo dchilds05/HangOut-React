@@ -1,0 +1,30 @@
+{
+  "name": "hangout",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "bulma-start": "0.0.4",
+    "cloudinary": "^1.26.2",
+    "connect-mongo": "^4.4.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.1.2",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^4.0.0",
+    "serve-favicon": "^2.5.0",
+    "urijs": "^1.19.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
