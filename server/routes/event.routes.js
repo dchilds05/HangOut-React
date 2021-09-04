@@ -19,14 +19,6 @@ let uriTemplate = new URITemplate(`https://app.ticketmaster.com/discovery/v2/eve
 
 //CREATE EVENT PAGES 
 
-
-router.get("/create", (req, res) => {
-    res.render("eventPages/createEvent")
-})
-
-
-
-
 router.post("/create", imageUploader.single('img'), (req, res) => {
 
     const {name, type, tags, artistSiteUrl, img, description, venueName, city, country, date, time} = req.body;
@@ -38,12 +30,12 @@ router.post("/create", imageUploader.single('img'), (req, res) => {
     .then(event => {
         Event.findByIdAndUpdate(event._id, { owner: req.session.user})
         .then(event => {
-            console.log("the event was created", event)
-            res.render("eventPages/event")
-        }).catch(err => console.log("error with event owner creation"))
+            console.log("the event was created")
+            res.json(event)
+        }).catch(err => res.json(err))
     })
     
-    .catch(err => console.log(err))
+    .catch(err => res.json(err))
 })
 
 
@@ -69,7 +61,7 @@ router.get("/category/:categoryName" , (req, res) => {
     axios.get(eventUri).then(resultsApi => {
 
         if (resultsApi.data.page.totalElements === 0 ) { 
-            res.render("search/noSearchResults" , {user: req.session.user})
+            res.json({user: req.session.user})
         }
         else {
             let eventsFromApi = resultsApi.data._embedded.events.map(convert);
@@ -78,13 +70,11 @@ router.get("/category/:categoryName" , (req, res) => {
                 eventsFromApi.sort((a, b) => {return new Date(a.dateAndTime.date) - new Date(b.dateAndTime.date)})
             }
 
-            res.render("eventPages/eventsByCategories", {results: eventsFromApi, categoryName: category, user: req.session.user})
+            res.json({results: eventsFromApi, categoryName: category, user: req.session.user})
             console.log(eventsFromApi.length, "events from : " , category)
         }
 
-    }).catch(err => console.log(err))
-
-
+    }).catch(err => res.json(err))
 })
 
 //SAVE AN EVENT POST ROUTE 
@@ -134,7 +124,7 @@ router.get("/:id", (req, res) => {
 
     Event.findById(eventId)
     .then(eventFound => {
-        res.render("eventPages/event", eventFound)
+        res.json(eventFound)
         console.log("this event is ours")
     })
     .catch(eventNotFound => {
@@ -149,21 +139,11 @@ router.get("/:id", (req, res) => {
             let eventFromApi = convert(result.data._embedded.events[0]);
             return eventFromApi
         }).then(eventFound => {
-            res.render("eventPages/event", {eventFound: eventFound, user: req.session.user})
+            res.json({eventFound: eventFound, user: req.session.user})
             console.log("this event is not ours")
-        }).catch(err => console.log(err))
+        }).catch(err => res.json(err))
     })
 
-})
-
-
-
-
-
-//EVENT PAGES MAIN ROUTE
-
-router.get("/", (req, res) => {
-    res.render("eventPages/event")
 })
 
 
